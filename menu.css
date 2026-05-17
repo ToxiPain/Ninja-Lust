@@ -1,0 +1,180 @@
+/* menu.css */
+
+/* =========================
+   MENU
+========================= */
+
+#start-menu {
+  position: fixed;
+
+  inset: 0;
+
+  z-index: 999999;
+
+  overflow: hidden;
+}
+
+/* =========================
+   FONDO
+========================= */
+
+.menu-background {
+  position: absolute;
+
+  inset: 0;
+
+ background-image: url("https://i.imgur.com/VRD180s.jpeg");
+
+  background-size: cover;
+  background-position: center;
+
+  image-rendering: pixelated;
+
+  transform: scale(1.03);
+}
+
+/* =========================
+   OSCURECER
+========================= */
+
+.menu-overlay {
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    linear-gradient(
+      to bottom,
+      rgba(0,0,0,0.35),
+      rgba(0,0,0,0.7)
+    );
+}
+
+/* =========================
+   CONTENIDO
+========================= */
+
+.menu-content {
+  position: relative;
+
+  z-index: 5;
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: flex-start;
+  align-items: center;
+
+  padding-top: 20px;
+
+  gap: 10px;
+}
+
+/* =========================
+   LOGO
+========================= */
+
+.menu-logo {
+  width: 1250px;
+
+  max-width: 90%;
+
+  image-rendering: pixelated;
+
+  filter:
+    drop-shadow(0px 0px 20px rgba(255,120,0,0.35));
+}
+
+/* =========================
+   START TEXT
+========================= */
+
+.start-text {
+  font-family: 'Press Start 2P', cursive;
+
+  font-size: 18px;
+
+  color: #ffffff;
+
+  text-shadow:
+    0 0 8px #00ff99,
+    2px 2px 0px #000;
+
+  animation: blinkText 1.4s infinite;
+}
+
+/* =========================
+   BLINK
+========================= */
+
+@keyframes blinkText {
+
+  0% {
+    opacity: 1;
+  }
+
+  50% {
+    opacity: 0.4;
+  }
+
+  100% {
+    opacity: 1;
+  }
+}
+
+/* =========================
+   HIDE GAME
+========================= */
+
+#game-container {
+  opacity: 0;
+
+  pointer-events: none;
+}
+
+/* =========================
+   MENU EXIT
+========================= */
+
+.menu-hide {
+  animation: menuFade 0.8s forwards;
+}
+
+@keyframes menuFade {
+
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+
+.game-show {
+  opacity: 1 !important;
+
+  pointer-events: auto !important;
+}
+
+/* =========================
+   VERSION
+========================= */
+
+.menu-version {
+  position: absolute;
+
+  bottom: 25px;
+  left: 25px;
+
+  font-family: 'Press Start 2P', cursive;
+
+  font-size: 10px;
+
+  color: rgba(255,255,255,0.65);
+
+  text-shadow:
+    2px 2px 0px #000;
+}
+

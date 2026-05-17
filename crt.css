@@ -1,0 +1,131 @@
+/* crt.css */
+
+/* =========================
+   CRT OVERLAY
+========================= */
+
+body::before {
+  content: "";
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  z-index: 99999;
+
+  background:
+    repeating-linear-gradient(
+      to bottom,
+      rgba(255,255,255,0.03),
+      rgba(255,255,255,0.03) 1px,
+      transparent 1px,
+      transparent 3px
+    );
+
+  mix-blend-mode: soft-light;
+}
+
+/* =========================
+   CRT FLICKER
+========================= */
+
+body::after {
+  content: "";
+
+  position: fixed;
+
+  top: 0;
+  left: 0;
+
+  width: 100%;
+  height: 100%;
+
+  pointer-events: none;
+
+  z-index: 99998;
+
+  background: rgba(255,255,255,0.015);
+
+  animation: crt-flicker 0.12s infinite;
+}
+
+@keyframes crt-flicker {
+
+  0% {
+    opacity: 0.95;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0.96;
+  }
+}
+
+/* =========================
+   SCANLINE
+========================= */
+
+.scanline {
+  position: fixed;
+
+  top: -10%;
+
+  left: 0;
+
+  width: 100%;
+  height: 120px;
+
+  pointer-events: none;
+
+  z-index: 99997;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      rgba(255,255,255,0.06),
+      transparent
+    );
+
+  animation: scanlineMove 8s linear infinite;
+}
+
+@keyframes scanlineMove {
+
+  0% {
+    top: -20%;
+  }
+
+  100% {
+    top: 120%;
+  }
+}
+
+/* =========================
+   SCREEN VIGNETTE
+========================= */
+
+.crt-vignette {
+  position: fixed;
+
+  inset: 0;
+
+  pointer-events: none;
+
+  z-index: 99996;
+
+  box-shadow:
+    inset 0 0 120px rgba(0,0,0,0.85);
+
+  border:
+    8px solid rgba(255,255,255,0.03);
+}

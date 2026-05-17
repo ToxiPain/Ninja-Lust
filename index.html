@@ -1,0 +1,349 @@
+<!-- index.html -->
+
+<!DOCTYPE html>
+<html lang="es">
+<head>
+
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>Ninja Lust</title>
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="crt.css">
+  <link rel="stylesheet" href="menu.css">
+  <link rel="stylesheet" href="rpsAnimation.css">
+
+</head>
+<body>
+
+  <!-- =====================================
+       MENU DE INICIO
+  ====================================== -->
+
+  <div id="start-menu">
+
+    <!-- FONDO -->
+    <div class="menu-background"></div>
+
+    <!-- OVERLAY -->
+    <div class="menu-overlay"></div>
+
+    <!-- CONTENIDO -->
+    <div class="menu-content">
+
+      <!-- LOGO -->
+      <img
+        class="menu-logo"
+        src="https://i.imgur.com/X1ZQSyf.png"
+        alt="Logo"
+      >
+
+      <!-- TEXTO -->
+      <div class="start-text">
+        Toca la pantalla para empezar...
+      </div>
+      <div class="menu-version">
+  Version 1.0.1 (Alpha Build)
+</div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================
+       JUEGO
+  ====================================== -->
+
+  <div id="game-container">
+
+    <!-- TIENDA -->
+    <div class="shop-indicator">
+      🏪 <span>(Pulsa "T" para abrir)</span>
+    </div>
+
+    <div class="game-wrapper">
+
+      <!-- =====================================
+           IZQUIERDA
+      ====================================== -->
+
+      <div class="character-column">
+
+        <!-- SAKURA -->
+        <div class="character-box">
+
+          <h2 class="sakura-name">
+            Sakura
+          </h2>
+
+          <div class="image-box">
+
+            <!-- CONTADOR BERENJENA -->
+            <div class="corner-counter left-counter">
+              🍆
+              <span>x0</span>
+            </div>
+
+            <!-- CONTADOR ROPA -->
+            <div class="corner-counter clothes-counter left-clothes">
+              👕
+
+              <div class="mini-bar">
+                <div class="mini-bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- IMAGEN -->
+            <img
+              class="main-character-img"
+              src="https://i.imgur.com/qOmFb16.png"
+              alt="Sakura"
+            >
+
+          </div>
+
+          <!-- LUST -->
+          <div class="lust-section">
+
+            <div class="bar-top">
+              🦊 Lust
+              <span>0%</span>
+            </div>
+
+            <div class="bar-bg">
+              <div class="lust-fill empty"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- SASUKE -->
+        <div class="info-box left-info">
+
+          <div class="profile-row">
+
+            <!-- FOTO -->
+            <div class="profile-pic">
+              <img
+                src="https://i.imgur.com/m8Oz4BS.png"
+                alt="Sasuke"
+              >
+            </div>
+
+            <!-- INFO -->
+            <div class="profile-info">
+
+              <h2 class="sasuke-name">
+                Sasuke (Tú)
+              </h2>
+
+              <div class="player-stats">
+
+                <!-- MORAL -->
+                <div class="moral-container">
+
+                  <div class="bar-top small">
+                    ⭐ Moral
+                    <span>100%</span>
+                  </div>
+
+                  <div class="bar-bg small-bar">
+                    <div class="moral-fill"></div>
+                  </div>
+
+                </div>
+
+                <!-- PUNTOS -->
+                <div class="points-box">
+                  <span>Pts:</span>
+                  <strong>2</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- BOTONES -->
+          <div class="toggle-container">
+
+            <button class="toggle-btn">
+              Toggle 1
+            </button>
+
+            <button class="toggle-btn">
+              Toggle 2
+            </button>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- =====================================
+           CENTRO
+      ====================================== -->
+
+      <div class="center-column">
+
+        <!-- HISTORIA -->
+        <div class="story-box">
+
+          <h3>
+            Historia
+          </h3>
+
+          <div class="story-text">
+          </div>
+
+        </div>
+
+        <!-- PANEL -->
+        <div class="middle-empty-panel">
+
+        </div>
+
+        <!-- SPIN -->
+        <button class="spin-btn">
+          Spin
+        </button>
+
+      </div>
+
+      <!-- =====================================
+           DERECHA
+      ====================================== -->
+
+      <div class="character-column">
+
+        <!-- HINATA -->
+        <div class="character-box">
+
+          <h2 class="hinata-name">
+            Hinata
+          </h2>
+
+          <div class="image-box">
+
+            <!-- CONTADOR BERENJENA -->
+            <div class="corner-counter right-counter">
+              🍆
+              <span>x0</span>
+            </div>
+
+            <!-- CONTADOR ROPA -->
+            <div class="corner-counter clothes-counter right-clothes">
+              👕
+
+              <div class="mini-bar">
+                <div class="mini-bar-fill"></div>
+              </div>
+            </div>
+
+            <!-- IMAGEN -->
+            <img
+              class="main-character-img"
+              src="https://i.imgur.com/5LUzIJn.png"
+              alt="Hinata"
+            >
+
+          </div>
+
+          <!-- LUST -->
+          <div class="lust-section">
+
+            <div class="bar-top">
+              🦊 Lust
+              <span>0%</span>
+            </div>
+
+            <div class="bar-bg">
+              <div class="lust-fill empty"></div>
+            </div>
+
+          </div>
+
+        </div>
+
+        <!-- NARUTO -->
+        <div class="info-box right-info">
+
+          <div class="profile-row">
+
+            <!-- FOTO -->
+            <div class="profile-pic">
+              <img
+                src="https://i.imgur.com/AuvWPyR.png"
+                alt="Naruto"
+              >
+            </div>
+
+            <!-- INFO -->
+            <div class="profile-info">
+
+              <h2 class="naruto-name">
+                Naruto
+              </h2>
+
+              <div class="player-stats">
+
+                <!-- MORAL -->
+                <div class="moral-container">
+
+                  <div class="bar-top small">
+                    ⭐ Moral
+                    <span>100%</span>
+                  </div>
+
+                  <div class="bar-bg small-bar">
+                    <div class="moral-fill"></div>
+                  </div>
+
+                </div>
+
+                <!-- PUNTOS -->
+                <div class="points-box">
+                  <span>Pts:</span>
+                  <strong>2</strong>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- DIALOGO -->
+          <div class="dialogue-box">
+            "No entiendo qué está pasando..."
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  <!-- =====================================
+       CRT FX
+  ====================================== -->
+
+  <div class="scanline"></div>
+  <div class="crt-vignette"></div>
+
+  <!-- JS -->
+<script src="menu.js"></script>
+<script src="rpsAnimation.js"></script>
+<script src="rpsSystem.js"></script>
+<script src="rpsAnimation.js"></script>
+<script src="script.js"></script>
+
+</body>
+</html>

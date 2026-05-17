@@ -1,0 +1,1250 @@
+/* =========================================
+   CONTENEDOR
+========================================= */
+
+.rps-animation-container {
+
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  animation:
+    impactShake 0.45s ease-out;
+}
+
+/* =========================================
+   FLASH CENTRAL
+========================================= */
+
+.rps-animation-container::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(120,80,255,0.32),
+      rgba(0,0,0,0)
+    );
+
+  animation:
+    flashPulse 0.4s ease-out;
+}
+
+/* =========================================
+   PERSONAJE
+========================================= */
+
+.rps-character {
+
+  position: relative;
+
+  width: 270px;
+
+  z-index: 10;
+
+  image-rendering: pixelated;
+
+  filter:
+    drop-shadow(0 0 18px #7d5cff);
+
+  animation:
+    characterEntrance 0.4s ease-out;
+}
+
+/* =========================================
+   ENTRADA PERSONAJE
+========================================= */
+
+@keyframes characterEntrance {
+
+  0% {
+
+    transform:
+      scale(0.45)
+      translateY(70px);
+
+    opacity: 0;
+  }
+
+  45% {
+
+    transform:
+      scale(1.18)
+      translateY(-14px);
+
+    opacity: 1;
+  }
+
+  100% {
+
+    transform:
+      scale(1)
+      translateY(0px);
+
+    opacity: 1;
+  }
+}
+
+/* =========================================
+   LINEAS ARRIBA
+========================================= */
+
+.top-lines {
+
+  position: absolute;
+
+  top: 80px;
+  left: -40px;
+
+  width: 140%;
+  height: 80px;
+
+  z-index: 1;
+
+  opacity: 1;
+
+  background:
+    repeating-linear-gradient(
+      -12deg,
+
+      #8f5bff 0px,
+      #8f5bff 14px,
+
+      transparent 14px,
+      transparent 28px,
+
+      #4ab8ff 28px,
+      #4ab8ff 42px,
+
+      transparent 42px,
+      transparent 56px
+    );
+
+  animation:
+    linesMoveTop 0.18s linear infinite;
+}
+
+/* =========================================
+   LINEAS ABAJO
+========================================= */
+
+.bottom-lines {
+
+  position: absolute;
+
+  bottom: 80px;
+  right: -40px;
+
+  width: 140%;
+  height: 80px;
+
+  z-index: 1;
+
+  opacity: 1;
+
+  background:
+    repeating-linear-gradient(
+      12deg,
+
+      #4ab8ff 0px,
+      #4ab8ff 14px,
+
+      transparent 14px,
+      transparent 28px,
+
+      #8f5bff 28px,
+      #8f5bff 42px,
+
+      transparent 42px,
+      transparent 56px
+    );
+
+  animation:
+    linesMoveBottom 0.18s linear infinite;
+}
+
+/* =========================================
+   RAYOS
+========================================= */
+
+.rps-animation-container::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background:
+
+    linear-gradient(
+      65deg,
+      transparent 45%,
+      rgba(130,100,255,0.95) 48%,
+      white 50%,
+      rgba(90,180,255,0.95) 52%,
+      transparent 55%
+    ),
+
+    linear-gradient(
+      -65deg,
+      transparent 45%,
+      rgba(130,100,255,0.9) 48%,
+      white 50%,
+      rgba(90,180,255,0.9) 52%,
+      transparent 55%
+    );
+
+  opacity: 0;
+
+  z-index: 2;
+
+  animation:
+    lightningFlash 0.35s ease-out;
+}
+
+/* =========================================
+   SHAKE
+========================================= */
+
+@keyframes impactShake {
+
+  0% {
+
+    transform: translate(0px, 0px);
+  }
+
+  20% {
+
+    transform: translate(-5px, 3px);
+  }
+
+  40% {
+
+    transform: translate(5px, -3px);
+  }
+
+  60% {
+
+    transform: translate(-4px, 2px);
+  }
+
+  80% {
+
+    transform: translate(4px, -2px);
+  }
+
+  100% {
+
+    transform: translate(0px, 0px);
+  }
+}
+
+/* =========================================
+   MOVIMIENTO LINEAS
+========================================= */
+
+@keyframes linesMoveTop {
+
+  from {
+
+    transform: translateX(0px);
+  }
+
+  to {
+
+    transform: translateX(-70px);
+  }
+}
+
+@keyframes linesMoveBottom {
+
+  from {
+
+    transform: translateX(0px);
+  }
+
+  to {
+
+    transform: translateX(70px);
+  }
+}
+
+/* =========================================
+   FLASH
+========================================= */
+
+@keyframes flashPulse {
+
+  0% {
+
+    opacity: 0;
+  }
+
+  30% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   RAYOS
+========================================= */
+
+@keyframes lightningFlash {
+
+  0% {
+
+    opacity: 0;
+  }
+
+  25% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   GLITCH / DISTORT
+========================================= */
+
+.rps-character {
+
+  animation:
+    characterEntrance 0.4s ease-out,
+    glitchFlicker 0.12s steps(2) infinite;
+}
+
+/* CAPA RGB */
+
+.rps-character-glitch {
+
+  position: absolute;
+
+  width: 320px;
+
+  z-index: 9;
+
+  opacity: 0.45;
+
+  image-rendering: pixelated;
+
+  mix-blend-mode: screen;
+
+  animation:
+    glitchOffset 0.08s infinite;
+}
+
+/* ROJO */
+
+.glitch-red {
+
+  filter:
+    drop-shadow(-4px 0px red);
+
+  transform:
+    translateX(-4px);
+}
+
+/* AZUL */
+
+.glitch-blue {
+
+  filter:
+    drop-shadow(4px 0px cyan);
+
+  transform:
+    translateX(4px);
+}
+
+/* =========================================
+   GLITCH MOVIMIENTO
+========================================= */
+
+@keyframes glitchOffset {
+
+  0% {
+
+    transform:
+      translate(0px, 0px);
+  }
+
+  20% {
+
+    transform:
+      translate(-4px, 2px);
+  }
+
+  40% {
+
+    transform:
+      translate(5px, -2px);
+  }
+
+  60% {
+
+    transform:
+      translate(-3px, 1px);
+  }
+
+  80% {
+
+    transform:
+      translate(3px, -1px);
+  }
+
+  100% {
+
+    transform:
+      translate(0px, 0px);
+  }
+}
+
+/* =========================================
+   FLICKER
+========================================= */
+
+@keyframes glitchFlicker {
+
+  0% {
+
+    filter:
+      brightness(1);
+  }
+
+  20% {
+
+    filter:
+      brightness(1.25);
+  }
+
+  40% {
+
+    filter:
+      brightness(0.9);
+  }
+
+  60% {
+
+    filter:
+      brightness(1.3);
+  }
+
+  80% {
+
+    filter:
+      brightness(0.95);
+  }
+
+  100% {
+
+    filter:
+      brightness(1);
+  }
+}
+
+/* =========================================
+   RESULTADO TEXTO
+========================================= */
+
+.rps-result-box {
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  text-align: center;
+
+  padding: 20px;
+}
+
+/* =========================================
+   TEXTO RESULTADO
+========================================= */
+
+.rps-result-text {
+
+  font-size: 18px;
+
+  line-height: 2;
+
+  color: white;
+
+  text-shadow:
+    0 0 8px rgba(255,255,255,0.4);
+
+  animation:
+    resultFade 0.35s ease-out,
+    textGlitch 0.18s linear 2;
+}
+
+/* =========================================
+   NOMBRE SASUKE
+========================================= */
+
+.sasuke-result-name {
+
+  color: #6fa8ff;
+
+  text-shadow:
+    0 0 12px #6fa8ff;
+}
+
+/* =========================================
+   OPCION
+========================================= */
+
+.rps-choice-text {
+
+  color: #eea005;
+
+  text-shadow:
+    0 0 10px #eea005;
+}
+
+/* =========================================
+   FADE
+========================================= */
+
+@keyframes resultFade {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      scale(0.8)
+      translateY(12px);
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      scale(1)
+      translateY(0px);
+  }
+}
+
+/* =========================================
+   GLITCH
+========================================= */
+
+@keyframes textGlitch {
+
+  0% {
+
+    transform: translate(0px);
+  }
+
+  20% {
+
+    transform: translate(-2px, 1px);
+  }
+
+  40% {
+
+    transform: translate(2px, -1px);
+  }
+
+  60% {
+
+    transform: translate(-1px, 0px);
+  }
+
+  80% {
+
+    transform: translate(1px, 1px);
+  }
+
+  100% {
+
+    transform: translate(0px);
+  }
+}
+
+/* =========================================
+   NARUTO CONTAINER
+========================================= */
+
+.naruto-animation-container {
+
+  width: 100%;
+  height: 100%;
+
+  position: relative;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+
+  animation:
+    narutoShake 0.6s infinite;
+}
+
+/* =========================================
+   NARUTO IMG
+========================================= */
+
+.naruto-character {
+
+  width: 280px;
+
+  position: relative;
+
+  z-index: 5;
+
+  image-rendering: pixelated;
+
+  filter:
+    drop-shadow(0 0 18px orange);
+
+  animation:
+    narutoEntrance 0.45s ease-out,
+    narutoGlow 0.9s infinite alternate,
+    narutoFloat 0.22s infinite alternate;
+}
+
+/* =========================================
+   ENTRADA
+========================================= */
+
+@keyframes narutoEntrance {
+
+  0% {
+
+    transform:
+      scale(0.5)
+      rotate(-6deg);
+
+    opacity: 0;
+  }
+
+  60% {
+
+    transform:
+      scale(1.15)
+      rotate(3deg);
+
+    opacity: 1;
+  }
+
+  100% {
+
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+}
+
+/* =========================================
+   FUEGO
+========================================= */
+
+.fire {
+
+  position: absolute;
+
+  width: 420px;
+  height: 40px;
+
+  opacity: 0.9;
+
+  filter:
+    blur(3px);
+
+  z-index: 1;
+}
+
+.fire-1 {
+
+  top: 90px;
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ff2200,
+      #ff9900,
+      #ffe066,
+      transparent
+    );
+
+  animation:
+    fireMove 0.2s linear infinite;
+}
+
+.fire-2 {
+
+  bottom: 100px;
+
+  background:
+    linear-gradient(
+      -90deg,
+      transparent,
+      #ff6600,
+      #ff2200,
+      #ffe066,
+      transparent
+    );
+
+  animation:
+    fireMoveReverse 0.2s linear infinite;
+}
+
+.fire-3 {
+
+  transform: rotate(-12deg);
+
+  background:
+    linear-gradient(
+      90deg,
+      transparent,
+      #ff3300,
+      #ff9900,
+      transparent
+    );
+
+  animation:
+    firePulse 0.25s infinite;
+}
+
+/* =========================================
+   EMBERS
+========================================= */
+
+.ember {
+
+  position: absolute;
+
+  width: 13px;
+  height: 13px;
+
+  border-radius: 50%;
+
+  background: orange;
+
+  box-shadow:
+    0 0 14px orange;
+
+  z-index: 3;
+}
+
+.ember-1 {
+
+  left: 30%;
+  bottom: 25%;
+
+  animation:
+    emberFloat 0.9s infinite;
+}
+
+.ember-2 {
+
+  right: 28%;
+  bottom: 20%;
+
+  animation:
+    emberFloat 1.1s infinite;
+}
+
+.ember-3 {
+
+  left: 50%;
+  bottom: 15%;
+
+  animation:
+    emberFloat 1.3s infinite;
+}
+
+/* =========================================
+   ANIMACIONES
+========================================= */
+
+@keyframes fireMove {
+
+  from {
+
+    transform: translateX(-40px);
+  }
+
+  to {
+
+    transform: translateX(40px);
+  }
+}
+
+@keyframes fireMoveReverse {
+
+  from {
+
+    transform: translateX(40px);
+  }
+
+  to {
+
+    transform: translateX(-40px);
+  }
+}
+
+@keyframes firePulse {
+
+  0% {
+
+    opacity: 0.4;
+  }
+
+  50% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    opacity: 0.4;
+  }
+}
+
+@keyframes emberFloat {
+
+  0% {
+
+    transform:
+      translateY(0px)
+      scale(1);
+
+    opacity: 1;
+  }
+
+  100% {
+
+    transform:
+      translateY(-90px)
+      scale(0.2);
+
+    opacity: 0;
+  }
+}
+
+/* =========================================
+   SHAKE
+========================================= */
+
+@keyframes narutoShake {
+
+  0% {
+
+    transform: translate(0px);
+  }
+
+  20% {
+
+    transform: translate(-4px, 2px);
+  }
+
+  40% {
+
+    transform: translate(4px, -2px);
+  }
+
+  60% {
+
+    transform: translate(-3px, 1px);
+  }
+
+  80% {
+
+    transform: translate(3px, -1px);
+  }
+
+  100% {
+
+    transform: translate(0px);
+  }
+}
+
+/* =========================================
+   NARUTO FLASH
+========================================= */
+
+.naruto-animation-container::before {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 0;
+
+  background:
+    radial-gradient(
+      circle,
+      rgba(255,180,50,0.18)
+      rgba(255,80,0,0.15),
+      transparent 70%
+    );
+
+  animation:
+    narutoPulse 0.45s ease-out infinite;
+}
+
+/* =========================================
+   FLASH BLANCO
+========================================= */
+
+.naruto-animation-container::after {
+
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  z-index: 8;
+
+  background:
+    linear-gradient(
+      120deg,
+      transparent 20%,
+      rgba(255,255,255,0.9) 50%,
+      transparent 80%
+    );
+
+  mix-blend-mode: screen;
+
+  opacity: 0;
+
+  animation:
+    animeFlash 0.55s ease-out infinite;
+}
+
+/* =========================================
+   GLOW PERSONAJE
+========================================= */
+
+.naruto-character {
+
+  animation:
+    narutoEntrance 0.45s ease-out,
+    narutoGlow 0.9s infinite alternate;
+}
+
+/* =========================================
+   GLOW ANIMADO
+========================================= */
+
+@keyframes narutoGlow {
+
+  0% {
+
+    filter:
+      drop-shadow(0 0 10px #ff8800)
+      drop-shadow(0 0 20px #ff4400);
+  }
+
+  100% {
+
+    filter:
+      drop-shadow(0 0 20px #ffd000)
+      drop-shadow(0 0 40px #ff6600);
+  }
+}
+
+/* =========================================
+   PULSO CHAKRA
+========================================= */
+
+@keyframes narutoPulse {
+
+  0% {
+
+    opacity: 0.3;
+
+    transform: scale(0.92);
+  }
+
+  50% {
+
+    opacity: 0.9;
+
+    transform: scale(1.05);
+  }
+
+  100% {
+
+    opacity: 0.3;
+
+    transform: scale(0.95);
+  }
+}
+
+/* =========================================
+   FLASH ANIME
+========================================= */
+
+@keyframes animeFlash {
+
+  0% {
+
+    opacity: 0;
+
+    transform: translateX(-120%);
+  }
+
+  35% {
+
+    opacity: 1;
+  }
+
+  100% {
+
+    opacity: 0;
+
+    transform: translateX(120%);
+  }
+}
+
+/* =========================================
+   FLOAT MOVEMENT
+========================================= */
+
+@keyframes narutoFloat {
+
+  0% {
+
+    transform:
+      translateY(-4px)
+      rotate(-1deg);
+  }
+
+  100% {
+
+    transform:
+      translateY(4px)
+      rotate(1deg);
+  }
+}
+
+/* =========================================
+   DESTELLOS AMARILLOS
+========================================= */
+
+.naruto-character::before,
+.naruto-character::after {
+
+  content: "";
+
+  position: absolute;
+
+  width: 26px;
+  height: 180px;
+
+  border-radius: 999px;
+
+  background:
+    linear-gradient(
+      to bottom,
+      transparent,
+      #fff7a8,
+      #ffd000,
+      transparent
+    );
+
+  filter:
+    blur(3px)
+    drop-shadow(0 0 12px #ffd000);
+
+  opacity: 0.9;
+
+  z-index: -1;
+
+  animation:
+    yellowFlash 0.35s infinite alternate;
+}
+
+/* IZQUIERDA */
+
+.naruto-character::before {
+
+  left: -40px;
+
+  top: 20px;
+
+  transform:
+    rotate(-28deg);
+}
+
+/* DERECHA */
+
+.naruto-character::after {
+
+  right: -40px;
+
+  top: 20px;
+
+  transform:
+    rotate(28deg);
+}
+
+/* =========================================
+   ANIMACION
+========================================= */
+
+@keyframes yellowFlash {
+
+  0% {
+
+    opacity: 0.2;
+
+    transform:
+      scaleY(0.7);
+  }
+
+  100% {
+
+    opacity: 1;
+
+    transform:
+      scaleY(1.2);
+  }
+}
+
+/* =========================================
+   NOMBRE NARUTO
+========================================= */
+
+.naruto-result-name {
+
+  color: #f6ff00;
+
+  text-shadow:
+    0 0 12px #f3ff89;
+}
+
+/* =========================================
+   GANADOR
+========================================= */
+
+.winner-container {
+
+  width: 100%;
+  height: 100%;
+
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+/* =========================================
+   TEXTO GANADOR
+========================================= */
+
+.winner-text {
+
+  width: 100%;
+
+  text-align: center;
+
+  font-size: 32px;
+
+  font-weight: bold;
+
+  line-height: 1.5;
+
+  letter-spacing: 2px;
+
+  text-shadow:
+    0 0 6px currentColor,
+    0 0 14px currentColor;
+
+  animation:
+    winnerPop 0.45s ease-out,
+    winnerGlow 1.2s infinite alternate;
+}
+
+/* =========================================
+   POP
+========================================= */
+
+@keyframes winnerPop {
+
+  0% {
+
+    opacity: 0;
+
+    transform:
+      scale(0.4)
+      rotate(-6deg);
+  }
+
+  60% {
+
+    opacity: 1;
+
+    transform:
+      scale(1.2)
+      rotate(3deg);
+  }
+
+  100% {
+
+    transform:
+      scale(1)
+      rotate(0deg);
+  }
+}
+
+/* =========================================
+   GLOW
+========================================= */
+
+@keyframes winnerGlow {
+
+  from {
+
+    filter:
+      brightness(1);
+  }
+
+  to {
+
+    filter:
+      brightness(1.12);
+  }
+}
+

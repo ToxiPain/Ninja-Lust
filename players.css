@@ -1,0 +1,206 @@
+/* players.css */
+
+/* =========================
+   INFO BOXES
+========================= */
+
+.info-box {
+  width: 560px;
+
+  padding: 14px;
+
+  background: #1b1b1b;
+
+  border: 4px solid #ffffff;
+
+  box-shadow:
+    6px 6px 0px #000000;
+}
+
+.left-info {
+  margin-right: auto;
+}
+
+.right-info {
+  margin-left: auto;
+}
+
+/* =========================
+   PROFILE
+========================= */
+
+.profile-row {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-bottom: 14px;
+}
+
+.profile-pic {
+  width: 64px;
+  height: 64px;
+
+  background: #303030;
+
+  border: 4px solid #ffffff;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  overflow: hidden;
+}
+
+.profile-pic img {
+  width: 100%;
+  height: 100%;
+
+  object-fit: cover;
+
+  image-rendering: pixelated;
+}
+
+.profile-info {
+  flex: 1;
+}
+
+.profile-info h2 {
+  font-size: 12px;
+
+  margin-bottom: 8px;
+
+  text-shadow:
+    2px 2px 0px #000;
+}
+
+/* =========================
+   PLAYER COLORS
+========================= */
+
+.sasuke-name {
+  color: #6fa8ff;
+}
+
+.naruto-name {
+  color: #f6ff00;
+}
+
+/* =========================
+   PLAYER STATS
+========================= */
+
+.player-stats {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.moral-container {
+  flex: 1;
+}
+
+.moral-fill {
+  width: 100%;
+
+  height: 100%;
+
+  background:
+    repeating-linear-gradient(
+      45deg,
+      #00ff66,
+      #00ff66 8px,
+      #00cc55 8px,
+      #00cc55 16px
+    );
+}
+
+/* =========================
+   POINTS
+========================= */
+
+.points-box {
+  width: 55px;
+
+  display: flex;
+
+  flex-direction: column;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 8px;
+
+  gap: 4px;
+}
+
+.points-box strong {
+  font-size: 12px;
+
+  color: #ffe066;
+}
+
+/* =========================
+   BUTTONS
+========================= */
+
+.toggle-container {
+  display: flex;
+
+  gap: 10px;
+}
+
+.toggle-btn {
+  flex: 1;
+
+  padding: 12px;
+
+  border: 4px solid #ffffff;
+
+  background: #2a2a2a;
+
+  color: white;
+
+  font-family: 'Press Start 2P', cursive;
+
+  font-size: 9px;
+
+  cursor: pointer;
+
+  box-shadow:
+    4px 4px 0px #000000;
+
+  transition: 0.1s;
+}
+
+.toggle-btn:hover {
+  transform: translate(2px, 2px);
+
+  box-shadow:
+    2px 2px 0px #000000;
+}
+
+/* =========================
+   DIALOGUE
+========================= */
+
+.dialogue-box {
+  background: #2b2b2b;
+
+  border: 4px solid #ffffff;
+
+  padding: 12px;
+
+  min-height: 90px;
+
+  font-size: 8px;
+
+  line-height: 1.8;
+
+  color: #d6d6d6;
+}
